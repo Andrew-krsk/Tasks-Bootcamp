@@ -18,7 +18,9 @@ public class JsonParser
       string text = item.message.text;
       long updateId = item.update_id;
       string firstName = item.message.from.first_name;
-      msgs.Add(new(id, firstName, text, updateId));
+      long replyToMessageId = item.message.message_id;
+
+      msgs.Add(new(id, firstName, text, updateId, replyToMessageId));
     }
     return msgs.ToArray();
   }

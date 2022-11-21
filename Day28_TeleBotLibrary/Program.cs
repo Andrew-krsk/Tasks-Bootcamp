@@ -5,7 +5,7 @@ TelegramBot bot = new TelegramBot(token);
 
 void Updates(TelegramMessageModel msg)
 {
-  bot.SendMessage(msg.chatId, $"{msg.text}: получено");
+  bot.SendMessage(msg.chatId, $"{msg.text}: получено", msg.replyToMessageId);
 }
 
 bot.action = Updates;
